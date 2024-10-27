@@ -32,14 +32,15 @@ const CollapsibleText: React.FC<CollapsibleTextProps> = ({
   status,
   children,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(import.meta.env.DEV ? true : false);
 
   return (
     <div
       style={{
-        backgroundColor: "#f6f8fa",
+        color: "#fff",
+        backgroundColor: "#0f0a19",
         padding: 16,
-        margin: 12,
+        margin: 16,
         borderRadius: 6,
         border: "1px solid #d1d5da",
       }}
@@ -95,9 +96,7 @@ const CollapsibleText: React.FC<CollapsibleTextProps> = ({
           )}
         </div>
       )}
-      {status && (
-        <h4 style={{ color: "#586069", marginTop: 12 }}>Status: {status}</h4>
-      )}
+      {/* {status && <h4 style={{ color: "#586069", marginTop: 12 }}>Status: {status}</h4>} */}
     </div>
   );
 };
